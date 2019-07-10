@@ -24,5 +24,26 @@ class ProductController extends AbstractController
         return $this->render('product/index.html.twig',
             ['productList' => $productList]);
     }
+
+    /**
+     * @Route("/product/{category}", name="productsByCategory")
+     */
+    public function editProductsByCategory($category)
+    {
+        $product = $this->getDoctrine()
+            ->getManager()
+            ->getRepository(Product ::class);
+        $productByCatList = $product ->findByCategory($category);
+
+        if (!$product) {
+            throw $this->createNotFoundException('Unable to find products.');
+        }
+
+        return $this->render('product/category.html.twig',
+            ['productByCatList' => $productByCatList]
+            );
+
+
+    }
 }
 

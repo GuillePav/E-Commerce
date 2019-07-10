@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
+{% block title %}Liste par catégorie{% endblock %}
 
-{% block body %}
-<h1>Liste des produits </h1>
+{% block body %}  <h1>Liste des produits par catégorie</h1>
+
     <ul>
-        {% for product in productList %}
+        {% for product in productByCatList %}
             <li>{{ product.name }}</li>
             <ul>
                 <li>{{ product.description }}</li>
-                <li>{{ product.category.name }}</li>
                 <li>{{ product.isAvailable }}</li>
                 <li>{{ product.nbProductsInStock }}</li>
                 <li>{{ product.priceProduct }}</li>
+                <li>{{ product.category.name }}</li>
             </ul>
 
         {% endfor %}
