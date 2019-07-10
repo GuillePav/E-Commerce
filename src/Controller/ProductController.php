@@ -45,5 +45,26 @@ class ProductController extends AbstractController
 
 
     }
+
+    /**
+     * @Route("/product/{id}", name="editProduct")
+     */
+    public function editProduct($id)
+    {
+        $product = $this->getDoctrine()
+            ->getManager()
+            ->getRepository(Product ::class);
+        $productEdit = $product ->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException('Unable to find products.');
+        }
+
+        return $this->render('product/product.html.twig',
+            ['productEdit' => $productEdit]
+        );
+
+
+    }
 }
 

@@ -1,0 +1,46 @@
+body {
+
+}
+
+#menu {
+    background-color: lemonchiffon;
+    border:#868686;
+    border-radius : 5px;
+    position: absolute;
+    padding-top : 10px;
+    padding-bottom : 15px;
+    text-align: center;
+    width : 250px;
+    height: 800px;
+    font-size : 20px;
+}
+#productByCat, #listProducts{
+    margin-left:300px;
+    position:absolute;
+    margin-top: 80px;
+    width : 1000px;
+    height:400px;
+}
+
+h3 {
+    font-size:18px;
+    color:coral;
+}
+header {
+
+    width : 1680px;
+    height : 30px;
+    border : solid black;
+    border-radius : 5px;
+    background-color: grey;
+    text-align: center;
+    vertical-align: center;
+    color:white;
+}
+
+
+li {
+    list-style-type: none;
+    margin-top:10px;
+
+}

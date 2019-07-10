@@ -2,12 +2,12 @@
 
 {% block title %}Hello ProductController!{% endblock %}
 
-{% block body %}
+{% block content %}
 <h1>Liste des produits </h1>
-    <ul>
+    <ul id="listProducts">
         {% for product in productList %}
-            <li>{{ product.name }}</li>
-            <ul>
+            <li><h3><a href="{{ path('editProduct', {'id':product.id })}}">{{ product.name }}</a></h3></li>
+            <ul id="productIndiv">
                 <li>{{ product.description }}</li>
                 <li>{{ product.category.name }}</li>
                 <li>{{ product.isAvailable }}</li>

@@ -2,12 +2,12 @@
 
 {% block title %}Liste par catégorie{% endblock %}
 
-{% block body %}  <h1>Liste des produits par catégorie</h1>
+{% block content %}  <h1>Liste des produits par catégorie</h1>
 
-    <ul>
+    <ul id="productByCat">
         {% for product in productByCatList %}
-            <li>{{ product.name }}</li>
-            <ul>
+            <li><h3>{{ product.name }}</h3></li>
+            <ul id="productByCatIndiv">
                 <li>{{ product.description }}</li>
                 <li>{{ product.isAvailable }}</li>
                 <li>{{ product.nbProductsInStock }}</li>
